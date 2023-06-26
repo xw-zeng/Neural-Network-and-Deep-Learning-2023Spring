@@ -5,11 +5,15 @@
 - Reference book: *Deep Learning*
 - Language: Python
 
-## Quick review of assignments
+
+
+## Quick review of projects
 
 - [1. Lab1](#1)
 - [2. Project 1](#2)
 - [3. Project 2](#3)
+- [4. Project 3](#4)
+- [5. Final Project](#5)
 
 
 
@@ -70,3 +74,32 @@ python main_fastresnet9.py --max-epoch=200
 | **GeResNeXt29_8x64d** | 36.33M  | **96.88%**            | 439.67         |
 
 - Deadline: 17:00 May 17th, 2023.
+
+
+
+<h3 id="4">Project 3. Novel Object Captioning</h3>
+
+- This project aims to solve the task of Novel Image Captioning, which means given an input scene image, we should train a model to generate the corresponding informative language description. The dataset used is MS COCO 2014.
+- Evaluation metrics: BLEU-4, METEOR, CIDEr-D, SPICE, F1-Score. All the metrics are showed in percentage.
+- Model used: Neural Baby Talk (NBT), Neural Twins Talk (NTT), Bootstrapping Language-Image Pre-training (BLIP). The model with the best performance is **BLIP**, whose CIDEr-D reaches **125.72**.
+
+|          | BLEU-4    | METEOR    | CIDEr-D    | SPICE     | F1-Score  |
+| -------- | --------- | --------- | ---------- | --------- | --------- |
+| NBT      | 29.62     | 24.05     | 92.82      | 18.41     | 86.56     |
+| NTT      | 30.49     | 24.35     | 93.75      | 18.53     | 89.91     |
+| **BLIP** | **38.54** | **29.66** | **125.72** | **22.90** | **91.60** |
+
+- Deadline: 17:00 June 14th, 2023.
+
+
+
+<h3 id="5">Final Project. Functa, Transformer Pruning, BatchNorm and DessiLBI</h3>
+
+- This project contains 3 main neural network tasks.
+  1. Train an implicit network of Functa. We implement our own latent modulated SIREN Functa model, which exhibits fairly good performance in both continuity and time-memory saving property.
+  2. Prune the Vision Transformer (ViT) via Sparsity. Three models – P-ViT, AP-ViT, CP-ViT – are implemented in this task, in which CP-ViT performs best at the given 9 levels (0.1 - 0.9) of pruning ratios because it takes layer-aware interdependency
+     into consideration.
+  3. The third task includes two small topics: one is to analyze the effect of BN on gradient predictiveness and effective β-smoothness; the other is to implement DessiLBI with Base SGD and Adam. Results show that with DessiLBI, Adam is higher in stability but lower in sparsity especially in convolutional layers compared to SGD.
+
+- The first task Functa is done by my partner, and the other tasks are done by myself.
+- Deadline: 17:00 June 20th, 2023.
